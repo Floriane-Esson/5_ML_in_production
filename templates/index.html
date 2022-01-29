@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="centered">
+  <h1>API Documentation</h1>
+  <p>
+    Welcome to the API documentation for our wine quality prediction. Wine-o-meter is a future unicorn application. 
+  </p>
+
+<div>
+    <h2>Endpoints</h2>
+    <blockquote>
+      POST /prediction
+    </blockquote>
+    <div>
+      <p>
+        This endpoint allows you to predict the quality of the wine with a score from 0 to 10 based on physicocheminal inputs.
+      </p>
+      <h3>
+        How to request this endpoint?
+      </h3>
+      <p>
+        The expected input is a JSON with an <code>input</code> key followed by an array of float. Each inputs is an
+        array of values in the following order:
+      </p><ol>
+        <li>fixed acidity</li>
+        <li>volatile acidity</li>
+        <li>citric acid</li>
+        <li>residual sugar</li>
+        <li>chlorides</li>
+        <li>free sulfur dioxide</li>
+        <li>total sulfur dioxide</li>
+        <li>density</li>
+        <li>pH</li>
+        <li>sulphates</li>
+        <li>alcohol</li>
+      </ol>
+      <p></p>
+      <p>
+        Example: 
+        <pre>
+        <code>curl -i -H "Content-Type: application/json" -X POST -d '{
+          "input": [[7.0, 0.27, 0.36, 20.7, 0.045, 45.0, 170.0, 1.001, 3.0, 0.45, 8.8]]
+        }' "http://127.0.0.1:5000/predict"
+        </code>
+        </pre>
+      </p>
+      <p>
+        It returns a JSON like so:
+        <pre>
+          <code>{'Quality': '[6]'}</code>
+        </pre>
+      </p>
+      <p>
+        You also can put multiple input on request :
+      </p> 
+      <p>
+        <pre>
+        <code>
+          input_multiple = {
+          "input": [[7.0, 0.27, 0.36, 20.7, 0.045, 45.0, 170.0, 1.001, 3.0, 0.45, 8.8],
+                    [5.0, 0.98, 0.32, 18.9, 0.050, 75.0, 122.0, 0.401, 3.1, 0.21, 1.2]]
+          }' "http://127.0.0.1:5000/predict"
+        </code>
+        </pre>
+      </p>
+    <p>
+      It returns a JSON like so:
+      <pre>
+        <code>{'Quality': '[6 5]'}</code>
+      </pre>
+    </p>
+
+      <h2>
+        Errors
+      </h2>
+      <p>
+        Our API will return an error if you don't pass json file or if there is missing key:
+      <p>
+        Identified errors:
+        <ul>
+          <li>Missing JSON</li>
+          <li>Missing key "input"</li>
+        </ul>
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}
