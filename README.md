@@ -16,13 +16,12 @@ Output : json with prediction of quality (from 0 to 10)
 
 ### Test the app 
 
-1. 
-```shell
+1.on shell 
+```
 $ curl -i -H "Content-Type: application/json" -X POST -d '{"input": [[7.0, 0.27, 0.36, 20.7, 0.045, 45.0, 170.0, 1.001, 3.0, 0.45, 8.8]]}' https://wine-o-meter-fess.herokuapp.com/predict
 ```
 
-2. 
-Or Python:
+2. Or Python:
 
 ```python
 import requests
@@ -33,15 +32,14 @@ response = requests.post("https://wine-o-meter-fess.herokuapp.com/predict", json
 print(response.json())
 ```
 
-3. 
-Or, an other tips. You can POST your request on Postman https://web.postman.co in the Workspace
+3. Or, other tips. You can POST your request on Postman https://web.postman.co in the Workspace
 
-POST URL : https://wine-o-meter-fess.herokuapp.com/predict
+POST URL : ```https://wine-o-meter-fess.herokuapp.com/predict```
 
 content on body : 
-{"input": [[7.0, 0.27, 0.36, 20.7, 0.045, 45.0, 170.0, 1.001, 3.0, 0.45, 8.8]]}
+```{"input": [[7.0, 0.27, 0.36, 20.7, 0.045, 45.0, 170.0, 1.001, 3.0, 0.45, 8.8]]}```
 
-## Create your own API Wine-O-Meter
+## Create your own API Wine-O-Meter 🍷
 
 1. Clone the repo GitHub with command on your directory :
     ``` $ git clone https://github.com/Floriane-Esson/5_ML_in_production.git ```
@@ -60,5 +58,6 @@ content on body :
 5. On an other command shell, run the test :
     ```$ python test.py ```
 
-6. You can try to push it on Heroku. 
+6. You can try to push it on Heroku 😉. 
 
+GOOD LUCK ! 😃
