@@ -1,3 +1,7 @@
+{{floriane.esson@gmail.com}}
+
+{{}}
+
 # ML in production
 
 URL adress of the Heroku app : https://wine-o-meter-fess.herokuapp.com
