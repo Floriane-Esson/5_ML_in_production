@@ -1,6 +1,6 @@
 {{floriane.esson@gmail.com}}
 
-{{}}
+{{https://share.vidyard.com/watch/8qKu5TnmiV6ubbhfZ5MMa6?}}
 
 # ML in production
 
